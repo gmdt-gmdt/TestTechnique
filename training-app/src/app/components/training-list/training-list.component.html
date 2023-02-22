@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="header">
+    <label class="float"> 40% </label>
+    <label> Apprentissage en cours </label>
+    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+    <button mat-button color="primary" id="afficherlog">
+      AFFICHER LES LOGS
+    </button>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+      <mat-button-toggle value="bold">ACIER</mat-button-toggle>
+      <mat-button-toggle value="italic">AUTRE</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div class="box">
+    <div *ngFor="let item of trainings" class="traininrI">
+      <mat-card class="example-card">
+        <img
+          mat-card-image
+          src="http://localhost:5000/data/{{ item.id }}/image"
+          alt="Photo of a Shiba Inu"
+        />
+        <mat-card-content>
+          <p class="float">
+            {{ item.created_at | date : "d/M/yy, h:mm:ss" }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

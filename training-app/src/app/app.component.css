@@ -1,0 +1,8 @@
+.directioncomponent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.float {
+  float: right;
+}
