@@ -19,13 +19,30 @@
   margin-left: 12px;
 }
 .header {
-  max-width: 795px;
-  margin-top: 10px;
+  margin: 100px;
+  margin-bottom: 50px;
 }
 #afficherlog {
   float: right;
+  margin: 20px;
 }
 .container {
   max-width: 1000px;
   margin-left: 90px;
+}
+mat-grid-tile {
+  background: lavender;
+}
+.my-card {
+  background: lavender;
+  width: 100%;
+}
+
+.my-card:hover {
+  cursor: pointer;
+  background: #f8f9fa;
+}
+
+.left-side {
+  margin: 30px;
 }
