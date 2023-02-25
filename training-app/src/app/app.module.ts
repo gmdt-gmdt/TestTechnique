@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MenuComponent } from './menu/menu.component';
 import { BarreRightStatisticComponent } from './barre-right-statistic/barre-right-statistic.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { LogstatComponent } from './components/logstat/logstat.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { MatChipsModule } from '@angular/material/chips';
     TrainingListComponent,
     MenuComponent,
     BarreRightStatisticComponent,
+    LogstatComponent,
   ],
   imports: [
     BrowserModule,
