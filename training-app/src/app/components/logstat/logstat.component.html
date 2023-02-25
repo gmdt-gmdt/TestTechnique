@@ -1,0 +1,36 @@
+<div style="display: block" class="chart">
+  <canvas
+    baseChart
+    [datasets]="labelMFL"
+    [labels]="lineChartLabels"
+    [options]="lineChartOptions"
+    [chartType]="ChartType"
+    (chartHover)="chartHovered($event)"
+    (chartClick)="chartClicked($event)"
+  ></canvas>
+</div>
+<div>
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color"
+    >
+      {{ tile.text }}
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<div>
+  <h2>Recommendations</h2>
+  <ul>
+    <li>
+      Les données de test sont à revoir : sur 160 données de test, 86 données
+      bonnes ont été identifiée mauvaises par l’algorithme.
+    </li>
+    <li>
+      Les données d’entrainement sont à revoir : sur 100 données de test, 5
+      données bonnes ont été identifiée mauvaises par l’algorithme.
+    </li>
+  </ul>
+</div>
