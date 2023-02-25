@@ -8,21 +8,22 @@ import { EssaieComponent } from './components/essaie/essaie.component';
 import { TrainingListComponent } from './components/training-list/training-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MenuComponent } from './menu/menu.component';
-
-
+import { BarreRightStatisticComponent } from './barre-right-statistic/barre-right-statistic.component';
+import { MatChipsModule } from '@angular/material/chips';
 @NgModule({
   declarations: [
     AppComponent,
     TrainingComponent,
     EssaieComponent,
     TrainingListComponent,
-    MenuComponent
+    MenuComponent,
+    BarreRightStatisticComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,9 +34,10 @@ import { MenuComponent } from './menu/menu.component';
     MatButtonToggleModule,
     MatProgressBarModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    MatChipsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
