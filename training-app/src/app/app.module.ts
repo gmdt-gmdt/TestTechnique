@@ -16,7 +16,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MenuComponent } from './menu/menu.component';
 import { BarreRightStatisticComponent } from './barre-right-statistic/barre-right-statistic.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { LogstatComponent } from './components/logstat/logstat.component';
+import { FormsModule } from '@angular/forms';
+import { NgChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +42,10 @@ import { LogstatComponent } from './components/logstat/logstat.component';
     MatFormFieldModule,
     MatButtonModule,
     MatChipsModule,
+
+    MatGridListModule,
+    FormsModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
