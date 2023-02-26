@@ -11,13 +11,17 @@ export class TrainingListComponent implements OnInit {
   trainings: any;
   image: any;
   breakpoint!: number;
+  trainingSelected: any;
+
   constructor(private trainingService: TrainingService) {}
   ngOnInit(): void {
     this.breakpoint = window.innerWidth <= 400 ? 1 : 6;
     this.trainingService.getdata().subscribe((data) => {
-      console.log(data);
       this.trainings = data;
     });
+    this.trainingService
+      .getTrainingById(1)
+      .subscribe((training) => (this.trainingSelected = training));
   }
   /*  getImagets(id: number){
     this.trainingService.getImage(id).subscribe(data=>{this.image})
@@ -25,6 +29,8 @@ export class TrainingListComponent implements OnInit {
   } */
 
   openDetail(elt: any) {
-    console.log(elt);
+    this.trainingService
+      .getTrainingById(elt.id)
+      .subscribe((training) => (this.trainingSelected = training));
   }
 }

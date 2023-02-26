@@ -1,7 +1,12 @@
 <div class="header">
-  <label class="float"> 70% </label>
+  <label class="float">
+    {{ trainingSelected ? trainingSelected.progress : 31 }}
+  </label>
   <label> Apprentissage en cours </label>
-  <mat-progress-bar mode="determinate" value="70"></mat-progress-bar>
+  <mat-progress-bar
+    mode="determinate"
+    [value]="trainingSelected ? trainingSelected.progress : 31"
+  ></mat-progress-bar>
   <button mat-button color="info" id="afficherlog" mat-raised-button>
     AFFICHER LES LOGS
   </button>
@@ -17,7 +22,7 @@
   </mat-button-toggle-group>
 </div>
 <div>
-  <mat-grid-list cols="4">
+  <mat-grid-list cols="3">
     <mat-grid-tile *ngFor="let item of trainings">
       <mat-card class="my-card" (click)="openDetail(item)">
         <mat-card-title>{{ item.title }}</mat-card-title>
