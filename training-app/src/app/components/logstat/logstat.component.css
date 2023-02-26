@@ -1,21 +1,3 @@
-p {
-  font-family: Lato;
-}
-.blockstat {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(200px, auto);
-}
-.chart {
-  grid-column: 1 / 2;
-  grid-row: 1;
-}
-.gridsatat {
-  grid-column: 3/3;
-  grid-row: 1;
-}
-.commentairestat {
-  grid-column: 4/4;
-  grid-row: 1;
+.log-stat {
+  display: flex;
 }

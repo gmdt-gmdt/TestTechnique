@@ -8,29 +8,29 @@ Le but de l'exercice est d'implémenter le code client de l'application. Une API
 
 ## Fonctionnalités
 
-* Redirection vers le dernier apprentissage créé.
-* Changer d'apprentissage en cliquant sur un apprentissage dans la barre latérale droite.
-* Liste de données en bas de l'écran.
-* Affichage et actualisation de la progression de l'apprentissage
-* Affichage des logs d'un apprentissage en cours
-* Affichage des résultats et recommendatations d'un apprentissage terminé
-* Distinction des données de test et des données de validation
+- Redirection vers le dernier apprentissage créé. <todo></todo>
+- Changer d'apprentissage en cliquant sur un apprentissage dans la barre latérale droite <P1>.
+- Liste de données en bas de l'écran<todo: à determiner>.
+- Affichage et actualisation de la progression de l'apprentissage <P1-done>
+- Affichage des logs d'un apprentissage en cours <P1-done>
+- Affichage des résultats et recommendatations d'un apprentissage terminé<P2>
+- Distinction des données de test et des données de validation<todo: à determiner>.
 
 ## Bonus
 
-* Remontée des statistiques des données depuis le back.
-* Routing : pouvoir accéder à un apprentissage directement depuis l'URL.
-* Reccourci clavier pour suivant/précédent.
-* Tests unitaires/composants/....
-* Version responsive pour mobile (design non fourni).
-* Lazy loading des images des données
-* Interdire le lancement d'un apprentissage si un apprentissage est en cours
+- Remontée des statistiques des données depuis le back<P1>.
+- Routing : pouvoir accéder à un apprentissage directement depuis l'URL<P1>.
+- Reccourci clavier pour suivant/précédent<P2>.
+- Tests unitaires/composants/....
+- Version responsive pour mobile (design non fourni).
+- Lazy loading des images des données <todo: à determiner>
+- Interdire le lancement d'un apprentissage si un apprentissage est en cours <P2>
 
 ## Contraintes techniques
 
-* Framework et outillage obligatoire mais choix libre.
-* Utiliser l'API.
-* Qualité de rédaction du code.
+- Framework et outillage obligatoire mais choix libre.
+- Utiliser l'API.
+- Qualité de rédaction du code.
 
 ## Démmarage de l'API
 

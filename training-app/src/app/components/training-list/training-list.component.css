@@ -1,35 +1,11 @@
-.example-card {
-  max-width: 350px;
-  margin-right: 40px;
-  margin-top: 10px;
-}
-
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
-}
-.float {
-  float: right;
-}
-.box {
-  display: flex;
-  flex-wrap: wrap;
-}
-.trainingInfo {
-  margin-left: 12px;
-}
 .header {
-  margin: 100px;
   margin-bottom: 50px;
 }
 #afficherlog {
   float: right;
   margin: 20px;
 }
-.container {
-  max-width: 1000px;
-  margin-left: 90px;
-}
+
 mat-grid-tile {
   background: lavender;
 }
@@ -43,6 +19,7 @@ mat-grid-tile {
   background: #f8f9fa;
 }
 
-.left-side {
-  margin: 30px;
+.trainings-container {
+  width: 1030px;
+  margin-left: 100px;
 }

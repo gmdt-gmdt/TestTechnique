@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+const data = [
+  61, 80, 7, 38, 19, 70, 21, 1, 10, 57, 12, 9, 22, 43, 65, 55, 15, 87, 78, 93,
+];
 
 @Component({
   selector: 'app-logstat',
@@ -6,15 +10,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./logstat.component.css'],
 })
 export class LogstatComponent {
+  @Input() training = { validation_set: data };
   public SystemName: string = 'MF1';
   firstCopy = false;
 
   // data
-  public lineChartData: Array<number> = [1, 2, 49];
+  public lineChartData: Array<number> = [...this.training.validation_set];
 
   public labelMFL: Array<any> = [{ data: this.lineChartData }];
   // labels
-  public lineChartLabels: Array<any> = ['1#', '2#', '3#'];
+  public lineChartLabels: Array<any> = [
+    ...this.training.validation_set.map((item) => `#${item}`),
+  ];
 
   constructor() {}
 
@@ -46,7 +53,7 @@ export class LogstatComponent {
 
         font: {
           family: 'FontAwesome',
-          size: 14,
+          size: 16,
         },
       },
       deferred: false,
@@ -66,12 +73,6 @@ export class LogstatComponent {
 
   public ChartType = 'bar';
 
-  public chartClicked(e: any): void {
-    console.log(e);
-  }
-  public chartHovered(e: any): void {
-    console.log(e);
-  }
   tiles = [
     { text: 'One', cols: 2, rows: 0.25, color: 'lightblue' },
     { text: 'One', cols: 2, rows: 0.25, color: 'lightblue' },

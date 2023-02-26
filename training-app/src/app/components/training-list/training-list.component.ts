@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Training } from 'src/app/models/Training';
 import { TrainingService } from '../../services/training.service';
 
 @Component({
@@ -8,29 +7,34 @@ import { TrainingService } from '../../services/training.service';
   styleUrls: ['./training-list.component.css'],
 })
 export class TrainingListComponent implements OnInit {
-  trainings: any;
+  trainingsData: any;
+  trainingsList: any;
   image: any;
   breakpoint!: number;
   trainingSelected: any;
+  showDivLog = false;
+  shownAddingTrainingForm = false;
+  lastTraining: any;
 
   constructor(private trainingService: TrainingService) {}
   ngOnInit(): void {
     this.breakpoint = window.innerWidth <= 400 ? 1 : 6;
     this.trainingService.getdata().subscribe((data) => {
-      this.trainings = data;
+      this.trainingsData = data;
     });
+
     this.trainingService
       .getTrainingById(1)
       .subscribe((training) => (this.trainingSelected = training));
+
+    this.trainingService.getAllTrainig().subscribe((data) => {
+      this.trainingsList = data;
+      const len = this.trainingsList.length;
+      this.lastTraining = this.trainingsList[0];
+    });
   }
-  /*  getImagets(id: number){
-    this.trainingService.getImage(id).subscribe(data=>{this.image})
-    return this.image;
-  } */
 
   openDetail(elt: any) {
-    this.trainingService
-      .getTrainingById(elt.id)
-      .subscribe((training) => (this.trainingSelected = training));
+    this.trainingService.getTrainingById(elt.id);
   }
 }

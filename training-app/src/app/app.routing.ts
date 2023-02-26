@@ -1,9 +1,20 @@
 import { Routes } from '@angular/router';
-import { StatisticComponent } from './components/statistic/statistic.component';
-import { TrainingComponent } from './components/training/training.component';
+import { AddTrainingComponent } from './components/add-training/add-training.component';
+import { BarreRightStatisticComponent } from './components/barre-right-statistic/barre-right-statistic.component';
+import { LogstatComponent } from './components/logstat/logstat.component';
+import { TrainingListComponent } from './components/training-list/training-list.component';
 
 export const ROUTES: Routes = [
-  { path: 'training-list', component: TrainingComponent, pathMatch: 'full' },
-  { path: 'statistic', component: StatisticComponent, pathMatch: 'full' },
-  { path: '**', component: TrainingComponent },
+  {
+    path: 'training-list',
+    component: TrainingListComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'statistic',
+    component: BarreRightStatisticComponent,
+    pathMatch: 'full',
+  },
+  { path: 'logs', component: LogstatComponent },
+  { path: '**', component: TrainingListComponent },
 ];

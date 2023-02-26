@@ -1,40 +1,64 @@
-<div class="header">
-  <label class="float">
-    {{ trainingSelected ? trainingSelected.progress : 31 }}
-  </label>
-  <label> Apprentissage en cours </label>
-  <mat-progress-bar
-    mode="determinate"
-    [value]="trainingSelected ? trainingSelected.progress : 31"
-  ></mat-progress-bar>
-  <button mat-button color="info" id="afficherlog" mat-raised-button>
-    AFFICHER LES LOGS
-  </button>
-  <mat-button-toggle-group
-    name="fontStyle"
-    aria-label="Font Style"
-    class="left-side"
-  >
-    <mat-button-toggle value="bold" mat-raised-button>ACIER</mat-button-toggle>
-    <mat-button-toggle value="italic" mat-raised-button
-      >AUTRE</mat-button-toggle
+<div class="trainings-container">
+  <div class="header">
+    <label class="float">
+      {{ lastTraining ? lastTraining.progress : 31 }}
+    </label>
+    <label> Apprentissage en cours </label>
+    <mat-progress-bar
+      mode="determinate"
+      [value]="lastTraining ? lastTraining.progress : 31"
+    ></mat-progress-bar>
+
+    <button
+      mat-button
+      color="info"
+      id="afficherlog"
+      mat-raised-button
+      (click)="showDivLog = !showDivLog"
     >
-  </mat-button-toggle-group>
-</div>
-<div>
-  <mat-grid-list cols="3">
-    <mat-grid-tile *ngFor="let item of trainings">
-      <mat-card class="my-card" (click)="openDetail(item)">
-        <mat-card-title>{{ item.title }}</mat-card-title>
-        <mat-card-content>
-          <img
-            mat-card-image
-            src="http://localhost:5000/data/{{ item.id }}/image"
-            alt="Photo of a Shiba Inu"
-          />
-          {{ item.created_at | date : "d/M/yy, h:mm:ss" }}
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+      AFFICHER LES LOGS
+    </button>
+    <mat-button-toggle-group
+      name="fontStyle"
+      aria-label="Font Style"
+      class="left-side"
+    >
+      <mat-button-toggle value="bold" mat-raised-button
+        >ACIER</mat-button-toggle
+      >
+      <mat-button-toggle value="italic" mat-raised-button
+        >AUTRE</mat-button-toggle
+      >
+      <mat-button-toggle
+        value="bold"
+        mat-raised-button
+        (click)="shownAddingTrainingForm = !shownAddingTrainingForm"
+        >AJOUTER TRAINING</mat-button-toggle
+      >
+    </mat-button-toggle-group>
+  </div>
+
+  <div *ngIf="showDivLog" [innerHtml]="lastTraining?.logs"></div>
+  <div *ngIf="shownAddingTrainingForm">
+    <app-add-training></app-add-training>
+  </div>
+
+  <app-logstat *ngIf="showDivLog" [training]="lastTraining"></app-logstat>
+  <div class="trainigs-list">
+    <mat-grid-list cols="3">
+      <mat-grid-tile *ngFor="let item of trainingsData">
+        <mat-card class="my-card" (click)="openDetail(item)">
+          <mat-card-title>{{ item.title }}</mat-card-title>
+          <mat-card-content>
+            <img
+              mat-card-image
+              src="http://localhost:5000/data/{{ item.id }}/image"
+              alt="Photo of a Shiba Inu"
+            />
+            {{ item.created_at | date : "d/M/yy, h:mm:ss" }}
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>

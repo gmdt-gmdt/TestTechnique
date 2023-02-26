@@ -21,6 +21,10 @@ export class TrainingService {
     return this.http.get(this.url);
   }
 
+  getAllAnalysis() {
+    return this.http.get('http://localhost:5000/analysis');
+  }
+
   getTrainingById(id: number) {
     return this.http.get(this.url + '/' + id);
   }
@@ -32,13 +36,11 @@ export class TrainingService {
   getTrainingResult(id: number, resultat: Resultat) {
     return this.http.get(this.getTrainingById(id) + '/' + resultat);
   }
-  getdata(){
-    return this.http.get("http://localhost:5000/data");
+  getdata() {
+    return this.http.get('http://localhost:5000/data');
   }
-  getImage(id : Number){
-    return this.http.get("http://localhost:5000/data"+id+"image");
-
+  getImage(id: Number) {
+    return this.http.get('http://localhost:5000/data' + id + 'image');
   }
 }
 ///////////////////////////////DILI/////////////////////////////////////////////
-
