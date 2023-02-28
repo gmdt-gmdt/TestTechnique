@@ -43,7 +43,13 @@
     <app-add-training></app-add-training>
   </div>
 
-  <app-logstat *ngIf="showDivLog" [training]="lastTraining"></app-logstat>
+  <app-logstat
+    *ngIf="showDivLog"
+    [training]="lastTraining"
+    [result]="trainingsResult"
+    [dataScore]="dataScore"
+    [dataId]="dataId"
+  ></app-logstat>
   <div class="trainigs-list">
     <mat-grid-list cols="3">
       <mat-grid-tile *ngFor="let item of trainingsData">

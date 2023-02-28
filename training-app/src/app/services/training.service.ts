@@ -42,5 +42,15 @@ export class TrainingService {
   getImage(id: Number) {
     return this.http.get('http://localhost:5000/data' + id + 'image');
   }
+
+  getTrainingByIdResult(id: Number) {
+    return this.http.get('http://localhost:5000/trainings/' + id + '/result');
+  }
+  getDonneeBonne() {
+    return this.http.get('http://localhost:5000/data/count?label=bonne');
+  }
+  getDonneeCasse() {
+    return this.http.get('http://localhost:5000/data/count?label=cassée');
+  }
 }
 ///////////////////////////////DILI/////////////////////////////////////////////

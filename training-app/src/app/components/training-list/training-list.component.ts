@@ -15,6 +15,10 @@ export class TrainingListComponent implements OnInit {
   showDivLog = false;
   shownAddingTrainingForm = false;
   lastTraining: any;
+  result!: any;
+  trainingsResult: any;
+  dataScore: number[] = [];
+  dataId: string[] = [];
 
   constructor(private trainingService: TrainingService) {}
   ngOnInit(): void {
@@ -29,12 +33,32 @@ export class TrainingListComponent implements OnInit {
 
     this.trainingService.getAllTrainig().subscribe((data) => {
       this.trainingsList = data;
-      const len = this.trainingsList.length;
       this.lastTraining = this.trainingsList[0];
+      this.getAverageScore();
     });
+    // this.trainingService
+    //   .getTrainingByIdResult(this.trainingResult.id)
+    //   .subscribe((trainingResult) => (this.result = trainingResult));
   }
 
   openDetail(elt: any) {
     this.trainingService.getTrainingById(elt.id);
+  }
+  getAverageScore() {
+    for (const val of this.trainingsList) {
+      this.trainingService
+        .getTrainingByIdResult(val.id)
+        .subscribe((trainingData) => {
+          this.trainingsResult = trainingData;
+          let sum = 0;
+          const len = this.trainingsResult?.train_set['f1-score'].length;
+          for (const item of this.trainingsResult?.train_set['f1-score']) {
+            sum += item;
+          }
+          const resultF1 = (sum / len) * 100;
+          this.dataScore.push(resultF1);
+          this.dataId.push(`${val.id}#`);
+        });
+    }
   }
 }
